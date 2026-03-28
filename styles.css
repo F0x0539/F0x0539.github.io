@@ -31,7 +31,7 @@ body {
 }
 
 .topbar {
-  width: min(720px, 100%);
+  width: min(1400px, 96vw);
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -47,6 +47,16 @@ body {
   border-radius: 18px;
   padding: 24px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.player {
+  display: block;
+  width: min(100%, 1280px);
+  height: auto;
+  max-height: none;
+  border-radius: 12px;
+  background: #050505;
+  margin: 0 auto;
 }
 
 .mode {
@@ -75,13 +85,6 @@ body {
   border-radius: 16px;
   background: #080808;
   border: 1px solid var(--border);
-}
-
-.player {
-  width: 100%;
-  max-height: 510px;
-  border-radius: 12px;
-  background: #050505;
 }
 
 .play-btn,
@@ -216,21 +219,21 @@ body {
   display: none !important;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 900px) {
+  .player {
+    width: min(100%, 1400px);
+  }
+
+  #quizCard {
+    width: min(1500px, 96vw);
+  }
+
   .topbar {
-    flex-direction: column;
-    gap: 6px;
+    width: min(1500px, 96vw);
   }
+}
 
-  .card {
-    padding: 18px;
-  }
-
-  .prompt {
-    font-size: 1.25rem;
-  }
-
-  .actions {
-    flex-direction: column;
-  }
+#quizCard {
+  width: min(1400px, 96vw);
+}
 }
