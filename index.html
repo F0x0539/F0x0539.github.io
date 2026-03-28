@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sound Skill Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div id="scoreText">0 / 0 correct so far</div>
+      <div id="progressText">Question 1 of 1</div>
+    </header>
+
+    <section class="card" id="quizCard">
+      <div class="mode" id="modeBadge">Skill only</div>
+      <h1 class="prompt" id="promptText">Loading question...</h1>
+
+      <div class="media-wrap">
+  	<video id="videoPlayer" class="player hidden" playsinline preload="metadata"></video>
+  	<audio id="audioPlayer" class="player hidden" preload="metadata"></audio>
+  	<button id="playBtn" class="play-btn" type="button">▶ Play clip</button>
+  	<div class="hint">Short clip. You can replay it.</div>
+      </div>
+
+      <form id="answerForm" class="answer-area" autocomplete="off">
+        <div id="textAnswerWrap" class="text-answer hidden">
+          <input
+            id="textAnswer"
+            type="text"
+            placeholder="Type your answer"
+            aria-label="Type your answer"
+          />
+        </div>
+
+        <div id="mcqWrap" class="mcq-wrap hidden"></div>
+
+        <div class="actions">
+          <button id="submitBtn" class="primary-btn" type="submit">Submit</button>
+          <button id="nextBtn" class="secondary-btn hidden" type="button">Next</button>
+        </div>
+      </form>
+
+      <div id="feedback" class="feedback"></div>
+    </section>
+
+    <section id="resultCard" class="card hidden">
+      <h2>Quiz complete</h2>
+      <p id="finalScoreText">You got 0% correct.</p>
+      <button id="retryBtn" class="primary-btn" type="button">Try again</button>
+    </section>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
