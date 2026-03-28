@@ -97,6 +97,13 @@ body {
   transition: transform 0.05s ease, border-color 0.15s ease, background 0.15s ease;
 }
 
+.landing-text {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 .option-btn {
   display: flex;
   align-items: center;
