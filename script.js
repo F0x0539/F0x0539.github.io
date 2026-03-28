@@ -16,6 +16,8 @@ const quizCard = document.getElementById("quizCard");
 const resultCard = document.getElementById("resultCard");
 const finalScoreText = document.getElementById("finalScoreText");
 const retryBtn = document.getElementById("retryBtn");
+const landingCard = document.getElementById("landingCard");
+const startBtn = document.getElementById("startBtn");
 
 let questions = [];
 let currentIndex = 0;
@@ -55,8 +57,11 @@ function initQuiz() {
   score = 0;
   selectedOption = null;
   answered = false;
+
+  landingCard.classList.add("hidden");
   resultCard.classList.add("hidden");
   quizCard.classList.remove("hidden");
+
   renderQuestion();
 }
 
@@ -229,4 +234,7 @@ answerForm.addEventListener("submit", submitAnswer);
 nextBtn.addEventListener("click", nextQuestion);
 retryBtn.addEventListener("click", initQuiz);
 
-initQuiz();
+quizCard.classList.add("hidden");
+resultCard.classList.add("hidden");
+
+startBtn.addEventListener("click", initQuiz);
